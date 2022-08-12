@@ -6,18 +6,18 @@ app.use(cors());
 
 const port = process.env.port || 3000;
 
-let user = [];
+let users = [];
 
 app.post("/user", (req, res) => {
     console.log(req.body);
 
-    user.push(req.body);
+    users.push(req.body);
 
     res.send('user is created');
 })
 
 app.get("/user", (req, res) => {
-    res.send(user);
+    res.send(users);
 })
 
 app.put("/user", (req, res) => {
